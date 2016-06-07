@@ -1,4 +1,4 @@
-$first-color: #464646;
+$bg-color: #f3d0a0;
 $second-color: #8d8d8d;
 $third-color: #e5e5e5;
 $forth-color: #ffffff;
@@ -8,7 +8,7 @@ $outter-spacing: 20px;
 @import 'reset';
 
 html, body {
-	background-color: $forth-color;
+	background-color: $bg-color;
 }
 
 .content {
