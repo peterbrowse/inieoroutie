@@ -8,11 +8,6 @@ var express 			= require('express')
 
 var app = express();
 
-app.set('views', __dirname + '/views');
-app.set('view engine', 'pug');
-app.use(express.static(__dirname + '/public'));
-app.use(morgan('combined'));
-
 if ('development' == app.get('env')) {
 	app.use(sassMiddleware({
 		src: __dirname + '/sass',
@@ -31,6 +26,11 @@ if ('production' == app.get('env')) {
 		outputStyle: 'compressed'
 	}));
 }
+
+app.set('views', __dirname + '/views');
+app.set('view engine', 'pug');
+app.use(express.static(__dirname + '/public'));
+app.use(morgan('combined'));
 
 //Set up routes
 require('./app/routes.js')(app);

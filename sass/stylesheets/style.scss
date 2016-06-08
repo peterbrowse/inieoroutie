@@ -5,24 +5,68 @@ $forth-color: #ffffff;
 
 $outter-spacing: 20px;
 
+$menu_padding: 20px;
+
 @import 'reset';
+@import 'type';
 
 html, body {
 	background-color: $bg-color;
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
 }
 
-.content {
-	background-color: $third-color;
+.content, .dude {
 	position: absolute;
 	bottom: 0;
 	top: 0;
 	left: 0;
 	right: 0;
-	margin: $outter-spacing;
+	text-align: center;
+	overflow: hidden;
 }
 
-.content-inner {
-	padding: $outter-spacing;
-	margin-bottom: $outter-spacing - ($outter-spacing * 2);
-	overflow: hidden;
+.menu_item, .count_item {
+	z-index: 9999;
+}
+
+.menu_item {
+	padding: $menu_padding;
+	position: absolute;
+}
+
+.menu_item--top-left {
+	top: 0;
+	left: 0;
+}
+
+.menu_item--top-right {
+	top: 0;
+	right: 0;	
+}
+
+.count_item {
+	position: absolute;
+	padding: $menu_padding;
+	text-align: center;
+	
+	.sub_title {
+		margin-top: $menu_padding / 2;
+	}
+}
+
+.count_item--bottom-left {
+	bottom: 0;
+	left: 0;
+}
+
+.count_item--bottom-right {
+	bottom: 0;
+	right: 0;
+}
+
+.dude {
+	img {
+		width: 100%;
+	}
 }
