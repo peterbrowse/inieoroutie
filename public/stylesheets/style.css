@@ -82,6 +82,7 @@ h1, h2, h3, h4, h5, a, p {
   color: #FFF; }
 
 a {
+  display: block;
   text-decoration: none;
   font-size: 18px;
   font-weight: 400;
@@ -92,6 +93,19 @@ a {
 p {
   font-size: 72px;
   font-weight: 400; }
+
+.preload .inner p {
+  font-size: 18px; }
+
+.timer_item p {
+  font-size: 18px; }
+
+.timer_item p.timer_numbers {
+  font-size: 30px;
+  letter-spacing: 2px; }
+
+.timer_item a {
+  font-size: 26px; }
 
 .count_item--bottom-left .sub_title p {
   text-align: left; }
@@ -110,7 +124,7 @@ html, body {
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif; }
 
-.content, .dude {
+.content, .dude, .preload {
   position: absolute;
   bottom: 0;
   top: 0;
@@ -119,12 +133,38 @@ html, body {
   text-align: center;
   overflow: hidden; }
 
-.menu_item, .count_item {
+.preload .inner {
+  display: table;
+  width: 100%;
+  height: 100%; }
+  .preload .inner p {
+    display: table-cell;
+    vertical-align: middle; }
+
+.content {
+  display: none; }
+
+.menu_item, .count_item, .timer_item {
   z-index: 9999; }
 
 .menu_item {
   padding: 20px;
   position: absolute; }
+
+.timer_item {
+  text-align: center;
+  position: relative;
+  display: inline-block; }
+  .timer_item .inner {
+    padding: 20px; }
+  .timer_item p.timer_numbers {
+    margin-bottom: 10px; }
+  .timer_item a {
+    margin-top: 11px;
+    display: inline-block; }
+  @media (max-width: 620px) {
+    .timer_item {
+      margin-top: 60px; } }
 
 .menu_item--top-left {
   top: 0;
@@ -133,6 +173,25 @@ html, body {
 .menu_item--top-right {
   top: 0;
   right: 0; }
+
+.social_icons {
+  display: none;
+  text-align: right; }
+
+.social_button {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  padding: 5px;
+  padding-top: 20px; }
+  .social_button img {
+    width: 100%;
+    height: 100%; }
+  .social_button a {
+    border: none; }
+
+.facebook_button {
+  padding-right: 0px; }
 
 .count_item {
   position: absolute;
@@ -149,5 +208,17 @@ html, body {
   bottom: 0;
   right: 0; }
 
-.dude img {
-  width: 100%; }
+.dude {
+  background: url("/img/dude.png");
+  background-repeat: no-repeat;
+  background-position: 50% 100%; }
+
+.belly_button {
+  background: url("/img/belly_buttons.png") no-repeat;
+  width: 303px;
+  height: 303px;
+  position: absolute;
+  left: 50%;
+  margin-left: -147.5px;
+  bottom: 208.5px;
+  overflow: hidden; }

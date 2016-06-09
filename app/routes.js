@@ -15,15 +15,42 @@ var URL 			= process.env.SOURCE_URL
 module.exports = function(app, passport) {
 	app.get('*', function (req, res) {
 		data_check(function() {
+			
+			var button_url = "";
+			var right_now = new Date();
+			var future_date = new Date(2016, 6, 10, 0, 0);
+			var polling_starts = new Date(2016, 6, 23, 7, 0);
+			var voting_closes = new Date(2016, 6, 23, 22, 0);
+			
+			if(right_now < future_date) {
+				var the_message = "Till registration closes";
+				var countdown_date = "2016/06/10 00:00:00";
+				button_url = "https://www.eureferendum.gov.uk/register-to-vote/";
+			} else if(right_now > future_date && right_now < polling_starts) {
+				var the_message = "Voting opens"
+				var countdown_date = "2016/23/10 07:00:00";
+			} else if(right_now > polling_starts && right_now < voting_closes) {
+				var the_message = "Voting closing"
+				var countdown_date = "2016/23/10 22:00:00";
+			} else {
+				var the_message = "Voting closed"
+				var countdown_date = "2016/23/10 22:00:00";
+			}
+			
 			var data = {
 				leave: leave_figure,
 				stay: stay_figure,
-				decision: decision
+				decision: decision,
+				countdown_date: countdown_date,
+				timer_message: the_message,
+				button_url: button_url
 			}
 			
 			res.render('index', {
 				title: 'In or Out?',
-				data: data
+				data: data,
+				timer_message: the_message,
+				button_url: button_url
 			});
 		});
 	});

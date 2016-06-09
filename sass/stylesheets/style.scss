@@ -7,6 +7,18 @@ $outter-spacing: 20px;
 
 $menu_padding: 20px;
 
+$belly_button_wh: 303px;
+
+$belly_button_bottom_offset: 360px;
+$belly_button_left_offset: 766px;
+
+$belly_button_horizontal_factor: 4px;
+$belly_button_vertical_factor: 0px;
+
+$social_button_size: 50px;
+$social_button_padding: 5px;
+$social_button_padding_top: 20px;
+
 @import 'reset';
 @import 'type';
 
@@ -16,7 +28,7 @@ html, body {
 	font-family: 'Montserrat', sans-serif;
 }
 
-.content, .dude {
+.content, .dude, .preload {
 	position: absolute;
 	bottom: 0;
 	top: 0;
@@ -26,13 +38,57 @@ html, body {
 	overflow: hidden;
 }
 
-.menu_item, .count_item {
+.preload {
+	.inner {
+		display: table;
+		width: 100%;
+		height: 100%;
+		
+		p {
+			display: table-cell;
+			vertical-align: middle;
+		}
+		
+		.preload_text {
+			
+		}
+	}
+}
+
+.content {
+	display: none;
+}
+
+.menu_item, .count_item, .timer_item {
 	z-index: 9999;
 }
 
 .menu_item {
 	padding: $menu_padding;
 	position: absolute;
+}
+
+.timer_item {
+	text-align: center;
+	position: relative;
+	display: inline-block;
+	
+	.inner {
+		padding: $menu_padding;
+	}
+	
+	p.timer_numbers {
+		margin-bottom: 10px;
+	}
+	
+	a {
+		margin-top: 11px;
+		display: inline-block;
+	}
+	
+	@media (max-width: 620px) {
+		margin-top: 60px;
+	}
 }
 
 .menu_item--top-left {
@@ -43,6 +99,32 @@ html, body {
 .menu_item--top-right {
 	top: 0;
 	right: 0;	
+}
+
+.social_icons {
+	display: none;
+	text-align: right;
+}
+
+.social_button {
+	width: $social_button_size;
+	height: $social_button_size;
+	display: inline-block;
+	padding: $social_button_padding;
+	padding-top: $social_button_padding_top;
+	
+	img {
+		width: 100%;
+		height: 100%;
+	}
+	
+	a {
+		border: none;
+	}
+}
+
+.facebook_button {
+	padding-right: 0px;
 }
 
 .count_item {
@@ -66,7 +148,18 @@ html, body {
 }
 
 .dude {
-	img {
-		width: 100%;
-	}
+	background: url('/img/dude.png');
+	background-repeat: no-repeat;
+	background-position: 50% 100%;
+}
+
+.belly_button {
+	background: url('/img/belly_buttons.png') no-repeat;
+	width: $belly_button_wh;
+	height: $belly_button_wh;
+	position: absolute;
+	left: 50%;
+	margin-left: (-$belly_button_wh / 2) + $belly_button_horizontal_factor;
+	bottom: ($belly_button_bottom_offset - ($belly_button_wh / 2)) + $belly_button_vertical_factor;
+	overflow: hidden;
 }

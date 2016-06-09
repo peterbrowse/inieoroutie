@@ -5,6 +5,8 @@ $number_size: 72px;
 $sub_title_size: 18px;
 $sub_title_weight: 400;
 
+$counter_timer_size: 30px;
+
 $font_colour: #FFF;
 
 html, body {
@@ -17,6 +19,7 @@ h1, h2, h3, h4, h5, a, p {
 }
 
 a {
+	display: block;
 	text-decoration: none;
 	font-size: $sub_title_size;
 	font-weight: $sub_title_weight;
@@ -28,6 +31,29 @@ a {
 p {
 	font-size: $number_size;
 	font-weight: $sub_title_weight;
+}
+
+.preload {
+	.inner {
+		p {
+			font-size: $sub_title_size;
+		}
+	}
+}
+
+.timer_item {
+	p {
+		font-size: $sub_title_size;
+	}
+	
+	p.timer_numbers {
+		font-size: $counter_timer_size;
+		letter-spacing: 2px;
+	}
+	
+	a {
+		font-size: $counter_timer_size - 4;
+	}	
 }
 
 .count_item--bottom-left {
