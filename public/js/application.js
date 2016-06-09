@@ -85,7 +85,8 @@ $(document).ready(function(){
 	});
 	
 	$(".belly_button").on('click', function(){
-		$(".belly_button").animateSprite('play', 'play');
+		$(".belly_button").animateSprite('play', 'click_belly');
+		$(".belly_button").animateSprite('restart');
 	});
 	
 	$(".timer_numbers").countdown(data.countdown_date, function(event) {
@@ -110,7 +111,7 @@ $(document).ready(function(){
 	    fps: 12,
 	    animations: {
 	        intro: button_animation,
-	        play: play_with_button
+	        click_belly: play_with_button
 	    },
 	    loop: false,
 	    autoplay: false,
