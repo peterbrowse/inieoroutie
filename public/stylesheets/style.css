@@ -89,6 +89,9 @@ a {
   letter-spacing: 1px;
   border-bottom: 2px #FFF solid;
   cursor: pointer; }
+  @media (max-width: 480px) {
+    a {
+      font-size: 14px; } }
 
 p {
   font-size: 72px;
@@ -164,7 +167,7 @@ html, body {
     display: inline-block; }
   @media (max-width: 620px) {
     .timer_item {
-      margin-top: 60px; } }
+      margin-top: 40px; } }
 
 .menu_item--top-left {
   top: 0;
@@ -199,6 +202,9 @@ html, body {
   text-align: center; }
   .count_item .sub_title {
     margin-top: 10px; }
+    @media (max-width: 480px) {
+      .count_item .sub_title {
+        margin-top: 0px; } }
 
 .count_item--bottom-left {
   bottom: 0;
@@ -212,6 +218,11 @@ html, body {
   background: url("/img/dude.png");
   background-repeat: no-repeat;
   background-position: 50% 100%; }
+  @media (max-width: 480px) {
+    .dude {
+      background: url("/img/dude_short.png");
+      background-repeat: no-repeat;
+      background-position: 50% 100%; } }
 
 .belly_button {
   background: url("/img/belly_buttons.png") no-repeat;
@@ -222,3 +233,6 @@ html, body {
   margin-left: -147.5px;
   bottom: 208.5px;
   overflow: hidden; }
+  @media (max-width: 480px) {
+    .belly_button {
+      bottom: 104.5px; } }

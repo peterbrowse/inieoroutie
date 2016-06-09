@@ -10,6 +10,8 @@ $menu_padding: 20px;
 $belly_button_wh: 303px;
 
 $belly_button_bottom_offset: 360px;
+$belly_button_bottom_offset_short: 256px;
+
 $belly_button_left_offset: 766px;
 
 $belly_button_horizontal_factor: 4px;
@@ -87,7 +89,7 @@ html, body {
 	}
 	
 	@media (max-width: 620px) {
-		margin-top: 60px;
+		margin-top: 40px;
 	}
 }
 
@@ -134,6 +136,10 @@ html, body {
 	
 	.sub_title {
 		margin-top: $menu_padding / 2;
+		
+		@media (max-width: 480px) {
+			margin-top: 0px;	
+		}
 	}
 }
 
@@ -151,6 +157,12 @@ html, body {
 	background: url('/img/dude.png');
 	background-repeat: no-repeat;
 	background-position: 50% 100%;
+	
+	@media (max-width: 480px) {
+		background: url('/img/dude_short.png');
+		background-repeat: no-repeat;
+		background-position: 50% 100%;
+	}
 }
 
 .belly_button {
@@ -162,4 +174,8 @@ html, body {
 	margin-left: (-$belly_button_wh / 2) + $belly_button_horizontal_factor;
 	bottom: ($belly_button_bottom_offset - ($belly_button_wh / 2)) + $belly_button_vertical_factor;
 	overflow: hidden;
+	
+	@media (max-width: 480px) {
+		bottom: ($belly_button_bottom_offset_short - ($belly_button_wh / 2)) + $belly_button_vertical_factor;
+	}
 }
