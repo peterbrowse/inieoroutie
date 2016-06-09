@@ -26,6 +26,10 @@ a {
 	letter-spacing: 1px;
 	border-bottom: 2px $font_colour solid;
 	cursor: pointer;
+	
+	@media (max-width: 480px) {
+		font-size: $sub_title_size - 4px;
+	}
 }
 
 p {
