@@ -13,7 +13,7 @@ var URL 			= process.env.SOURCE_URL
 ,	decision		= "";
 
 module.exports = function(app, passport) {
-	app.get('*', function (req, res) {
+	app.get('/', function (req, res) {
 		data_check(function() {
 			
 			var button_url = "";
