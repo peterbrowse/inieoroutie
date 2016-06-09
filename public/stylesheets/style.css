@@ -82,6 +82,10 @@ h1, h2, h3, h4, h5, a, p {
   color: #FFF; }
 
 a {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   display: block;
   text-decoration: none;
   font-size: 18px;
@@ -157,7 +161,11 @@ html, body {
 .timer_item {
   text-align: center;
   position: relative;
-  display: inline-block; }
+  display: inline-block;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
   .timer_item .inner {
     padding: 20px; }
   .timer_item p.timer_numbers {
@@ -168,6 +176,10 @@ html, body {
   @media (max-width: 620px) {
     .timer_item {
       margin-top: 40px; } }
+
+@media (max-width: 504px) {
+  .social_active {
+    margin-top: 100px; } }
 
 .menu_item--top-left {
   top: 0;
@@ -201,7 +213,11 @@ html, body {
   padding: 20px;
   text-align: center; }
   .count_item .sub_title {
-    margin-top: 10px; }
+    margin-top: 10px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
     @media (max-width: 480px) {
       .count_item .sub_title {
         margin-top: 0px; } }

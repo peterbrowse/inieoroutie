@@ -9,6 +9,13 @@ $counter_timer_size: 30px;
 
 $font_colour: #FFF;
 
+@mixin transition($duration) {
+  -webkit-transition: all $duration ease;
+     -moz-transition: all $duration ease;
+      -ms-transition: all $duration ease;
+          transition: all $duration ease;
+}
+
 html, body {
 	text-transform: uppercase;
 	font-family: 'Montserrat', sans-serif;
@@ -19,6 +26,7 @@ h1, h2, h3, h4, h5, a, p {
 }
 
 a {
+	@include transition(0.3s);
 	display: block;
 	text-decoration: none;
 	font-size: $sub_title_size;

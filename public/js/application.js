@@ -3,8 +3,9 @@ var stay_count = '';
 var button_animation;
 var loaded = false;
 var audio_count = 1;
+var animated = false;
 var options = {
-	useEasing : true, 
+	useEasing : false, 
 	useGrouping : true, 
 	separator : ',', 
 	decimal : '.', 
@@ -50,6 +51,37 @@ $(document).ready(function(){
 		e.preventDefault();
 		
 		$('.social_icons').fadeToggle(200);
+		
+		var wW = $(window).width();
+		
+		if(wW <= 504) {
+			
+			if($('.timer_item').hasClass("social_active")) {
+				setTimeout(function() {
+					$('.timer_item').removeClass('social_active');
+				}, 200);
+			} else {
+				$('.timer_item').addClass("social_active")
+			}
+		} else {
+			$('.timer_item').removeClass('social_active');
+		}
+	});
+	
+	$('.register_button').on('click', function() {
+		ga('send', 'event', 'Link', 'clicked', 'Registration');
+	});
+	
+	$('.twitter_button a').on('click', function() {
+		ga('send', 'event', 'Link', 'clicked', 'Twitter Share');
+	});
+	
+	$('.facebook_button a').on('click', function() {
+		ga('send', 'event', 'Link', 'clicked', 'Facebook Share');
+	});
+	
+	$('.menu_item--top-left a').on('click', function() {
+		ga('send', 'event', 'Link', 'clicked', 'Data Source');
 	});
 	
 	$(".timer_numbers").countdown(data.countdown_date, function(event) {
@@ -59,9 +91,9 @@ $(document).ready(function(){
 	});
 	
 	if(data.decision == "in") {
-		button_animation = [0,1,2,4,5,6,8,9,10,3,7,11];
+		button_animation = [6,7,8,9,10,11,12,12,11,10,9,8,7,6,5,4,3,2,1,1,2,3,4,5,6,7,8,9,10,11,12];
 	} else {
-		button_animation = [0,1,2,4,5,6,8,9,10,3,7,11];
+		button_animation = [6,5,4,3,2,1,1,2,3,4,5,6,7,8,9,10,11,12,12,11,10,9,8,7,6,5,4,3,2,1];
 	}
 	
 	stay_count = new CountUp("count-stay", 0, data.stay, 0, 2, options);
@@ -69,14 +101,13 @@ $(document).ready(function(){
 	
 	$(".belly_button").animateSprite({
 		columns: 13,
-	    fps: 24,
+	    fps: 12,
 	    animations: {
 	        intro: button_animation
 	    },
 	    loop: false,
 	    autoplay: false,
 	    complete: function(){
-	        // use complete only when you set animations with 'loop: false'
 	        
 	    }
 	});
@@ -174,10 +205,18 @@ function init_scene() {
 			
 			//Start Animations
 			start_sounds();
-			stay_count.start();
-			leave_count.start();
-			$(".belly_button").animateSprite('play', 'intro');
-			
+			stay_count.start(function(){
+				if(!animated){
+	        		$(".belly_button").animateSprite('play', 'intro');
+	        		animated = true;
+				}
+			});
+			leave_count.start(function(){
+				if(!animated){
+	        		$(".belly_button").animateSprite('play', 'intro');
+	        		animated = true;
+				}
+			});
 		}, 300);
 	});
 }

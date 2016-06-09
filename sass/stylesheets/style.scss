@@ -74,6 +74,7 @@ html, body {
 	text-align: center;
 	position: relative;
 	display: inline-block;
+	@include transition(0.3s);
 	
 	.inner {
 		padding: $menu_padding;
@@ -90,6 +91,12 @@ html, body {
 	
 	@media (max-width: 620px) {
 		margin-top: 40px;
+	}
+}
+
+@media (max-width: 504px) {
+	.social_active {
+		margin-top: 100px;
 	}
 }
 
@@ -136,6 +143,7 @@ html, body {
 	
 	.sub_title {
 		margin-top: $menu_padding / 2;
+		@include transition(0.3s);
 		
 		@media (max-width: 480px) {
 			margin-top: 0px;	
