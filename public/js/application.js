@@ -84,6 +84,10 @@ $(document).ready(function(){
 		ga('send', 'event', 'Link', 'clicked', 'Data Source');
 	});
 	
+	$(".belly_button").on('click', function(){
+		$(".belly_button").animateSprite('restart');
+	});
+	
 	$(".timer_numbers").countdown(data.countdown_date, function(event) {
 		$(this).text(
 			event.strftime('%D:%H:%M:%S')

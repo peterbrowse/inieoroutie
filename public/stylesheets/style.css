@@ -241,6 +241,7 @@ html, body {
       background-position: 50% 100%; } }
 
 .belly_button {
+  cursor: pointer;
   background: url("/img/belly_buttons.png") no-repeat;
   width: 303px;
   height: 303px;
@@ -248,7 +249,8 @@ html, body {
   left: 50%;
   margin-left: -147.5px;
   bottom: 208.5px;
-  overflow: hidden; }
+  overflow: hidden;
+  border-radius: 50%; }
   @media (max-width: 480px) {
     .belly_button {
       bottom: 104.5px; } }

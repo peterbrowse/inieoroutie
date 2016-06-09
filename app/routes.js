@@ -47,7 +47,7 @@ module.exports = function(app, passport) {
 			}
 			
 			res.render('index', {
-				title: 'In or Out?',
+				title: 'Innie or Outie?',
 				data: data,
 				timer_message: the_message,
 				button_url: button_url
