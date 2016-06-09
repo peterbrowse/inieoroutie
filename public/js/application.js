@@ -24,12 +24,14 @@ var static_images = [
 if(Modernizr.audio.mp3) {
 	var audio = [
 		'../audio/burp_1.mp3',
-		'../audio/burp_2.mp3'
+		'../audio/burp_2.mp3',
+		'../audio/burp_3.mp3'
 	];
 } else {
 	var audio = [
 		'../audio/burp_1.ogg',
-		'../audio/burp_2.ogg'
+		'../audio/burp_2.ogg',
+		'../audio/burp_3.mp3'
 	];
 }
 
