@@ -85,7 +85,7 @@ $(document).ready(function(){
 	});
 	
 	$(".belly_button").on('click', function(){
-		$(".belly_button").animateSprite('restart');
+		$(".belly_button").animateSprite('play', 'play');
 	});
 	
 	$(".timer_numbers").countdown(data.countdown_date, function(event) {
@@ -96,8 +96,10 @@ $(document).ready(function(){
 	
 	if(data.decision == "in") {
 		button_animation = [6,7,8,9,10,11,12,12,11,10,9,8,7,6,5,4,3,2,1,1,2,3,4,5,6,7,8,9,10,11,12];
+		play_with_button = [11,10,9,8,7,6,5,4,3,2,1,1,2,3,4,5,6,7,8,9,10,11,12];
 	} else {
 		button_animation = [6,5,4,3,2,1,1,2,3,4,5,6,7,8,9,10,11,12,12,11,10,9,8,7,6,5,4,3,2,1];
+		play_with_button = [2,3,4,5,6,7,8,9,10,11,12,12,11,10,9,8,7,6,5,4,3,2,1];
 	}
 	
 	stay_count = new CountUp("count-stay", 0, data.stay, 0, 2, options);
@@ -107,7 +109,8 @@ $(document).ready(function(){
 		columns: 13,
 	    fps: 12,
 	    animations: {
-	        intro: button_animation
+	        intro: button_animation,
+	        play: play_with_button
 	    },
 	    loop: false,
 	    autoplay: false,
