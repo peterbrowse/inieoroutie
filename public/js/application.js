@@ -14,6 +14,7 @@ var options = {
 
 var static_images = [
 		'/img/belly_buttons.png',
+		'/img/dude_short.png',
 		'/img/dude.png',
 		'/img/facebook.png',
 		'/img/twitter.png'
