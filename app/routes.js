@@ -18,9 +18,9 @@ module.exports = function(app, passport) {
 			
 			var button_url = "";
 			var right_now = new Date();
-			var future_date = new Date(2016, 6, 10, 0, 0);
-			var polling_starts = new Date(2016, 6, 23, 7, 0);
-			var voting_closes = new Date(2016, 6, 23, 22, 0);
+			var future_date = new Date("2016-06-10T00:00:00");
+			var polling_starts = new Date("2016-06-23T07:00:00");
+			var voting_closes = new Date("2016-06-23T22:00:00");
 			
 			if(right_now < future_date) {
 				var the_message = "Till registration closes";
@@ -28,13 +28,13 @@ module.exports = function(app, passport) {
 				button_url = "https://www.eureferendum.gov.uk/register-to-vote/";
 			} else if(right_now > future_date && right_now < polling_starts) {
 				var the_message = "Voting opens"
-				var countdown_date = "2016/23/10 07:00:00";
+				var countdown_date = "2016/06/23 07:00:00";
 			} else if(right_now > polling_starts && right_now < voting_closes) {
-				var the_message = "Voting closing"
-				var countdown_date = "2016/23/10 22:00:00";
+				var the_message = "Voting closes"
+				var countdown_date = "2016/06/23 22:00:00";
 			} else {
 				var the_message = "Voting closed"
-				var countdown_date = "2016/23/10 22:00:00";
+				var countdown_date = "2016/06/23 22:00:00";
 			}
 			
 			var data = {
