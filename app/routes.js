@@ -6,7 +6,7 @@ var request = require('request')
 
 //Variables
 var URL 			= process.env.SOURCE_URL
-,	ONE_HOUR 		= 60 * 60 * 1000
+,	ONE_HOUR 		= 600000
 ,	last_check 		= ''
 ,	leave_figure	= 0
 ,	stay_figure		= 0
